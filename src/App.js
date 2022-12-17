@@ -12,6 +12,12 @@ function App() {
   const [firstNumber, setFirstNumber] = useState('0');
   const [operation, setOperation] = useState('');
 
+  const handleOnClear = () => {
+    setCurrentNumber('0')
+    setFirstNumber('0')
+    setOperation('')
+  };
+
   const handleAddNumber = (num) => {
     setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
   }
@@ -52,7 +58,7 @@ function App() {
         <Row>
           <Button label="x" />
           <Button label="/" />
-          <Button label="c" />
+          <Button label="c" onClick={handleOnClear} />
           <Button label="." />
         </Row>
         <Row>
